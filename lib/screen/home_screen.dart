@@ -25,6 +25,34 @@ class HomeScreen extends StatelessWidget {
           },
           child: Text('Push'),
         ),
+        OutlinedButton(
+          onPressed: () {
+            Navigator.of(context).pop(
+              456,
+            );
+          },
+          child: Text(
+            'Pop',
+          ),
+        ),
+        OutlinedButton(
+          onPressed: () {
+            Navigator.of(context).maybePop(
+              456,
+            );
+          },
+          child: Text(
+            'Maybe Pop',
+          ),
+        ),
+        OutlinedButton(
+          onPressed: () {
+            print(Navigator.of(context).canPop());
+          },
+          child: Text(
+            'Can Pop',
+          ),
+        ),
       ],
     );
   }
