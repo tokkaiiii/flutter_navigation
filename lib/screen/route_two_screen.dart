@@ -61,6 +61,22 @@ class RouteTwoScreen extends StatelessWidget {
             'Push Replacement Named',
           ),
         ),
+        OutlinedButton(
+          onPressed: () {
+            Navigator.of(context).pushNamedAndRemoveUntil(
+              '/three',
+              (route) {
+                /// 만약에 삭제 할거면 (Route Stack) false 반환
+                /// 만약에 삭제를 안 할거면 true 반환
+                return route.settings.name == '/';
+              },
+              arguments: 999,
+            );
+          },
+          child: Text(
+            'Push Named And Remove Until',
+          ),
+        ),
       ],
     );
   }
